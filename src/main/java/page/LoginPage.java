@@ -41,7 +41,7 @@ public class LoginPage {
     }
 
     @Step
-    public boolean openLoginPage() {
+    public boolean checkLoginButtonIsDisplayed() {
         waitLoginPage();
         return driver.findElement(ENTER_BUTTON).isDisplayed();
     }
