@@ -13,7 +13,7 @@ public class MainPage {
 
     private final By LOGIN_BUTTON = By.xpath("//*[contains(text(),'Войти в аккаунт')]");
     private final By ACCOUNT_BUTTON = By.xpath("//*[contains(text(),'Личный Кабинет')]");
-    private final By BURGER_HEADER = By.xpath(".h1[contains(@class, 'text')]");
+    private final By BURGER_HEADER = By.xpath("//h1[contains(@class, 'text')]");
     private final By BASKET_HEADER = By.xpath(".section[contains (@class, 'BurgerConstructor_basket')]");
     private final By BUNS_BUTTON = By.xpath(".span[text()='Булки']");
     private final By SAUCE_BUTTON = By.xpath(".span[text()='Соусы']");

@@ -12,7 +12,7 @@ public class AccountPage {
     private WebDriver driver;
 
     private final By EMAIL_FIELD = By.xpath(".//input[contains(@name, 'name') and @type='text']");
-    private final By CONSTRUCTOR_BUTTON = By.xpath(".//p[contains(@class, 'AppHeader_header__linkText') and text()='Конструктор'] ");
+    private final By CONSTRUCTOR_BUTTON = By.xpath("//*[contains(text(),'Конструктор')]");
     private final By LOGO_HEADER = By.xpath(".//div[contains(@class, 'AppHeader_header__logo')]");
     private final By EXIT_BUTTON = By.xpath(".//button[contains(@class, 'Account_button')]");
     private final By REGISTER_BUTTON = By.xpath("//*[contains(text(),'Зарегистрироваться')]");
