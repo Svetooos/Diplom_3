@@ -16,6 +16,7 @@ public class LoginPage {
     private final By EMAIL_FIELD = By.xpath(".//input[contains(@class, 'text') and @name='name']");
     private final By PASSWORD_FIELD = By.xpath(".//input[contains(@class, 'text') and @type='password']");
     private final By ENTER_BUTTON = By.xpath(".//button[text()='Войти']");
+    private final By RESET_PASSWORD = By.xpath("//*[contains(text(),'Восстановить пароль')]");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -52,5 +53,12 @@ public class LoginPage {
         setEmail(email);
         setPassword(password);
         clickButtonEnter();
+    }
+
+    @Step
+    public void clickResetPassword() {
+        waitLoginPage();
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(RESET_PASSWORD));
+        driver.findElement(RESET_PASSWORD).click();
     }
 }

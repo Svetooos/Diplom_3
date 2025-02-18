@@ -8,15 +8,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class ProfilePage {
+public class AccountPage {
     private WebDriver driver;
 
     private final By EMAIL_FIELD = By.xpath(".//input[contains(@name, 'name') and @type='text']");
     private final By CONSTRUCTOR_BUTTON = By.xpath(".//p[contains(@class, 'AppHeader_header__linkText') and text()='Конструктор'] ");
     private final By LOGO_HEADER = By.xpath(".//div[contains(@class, 'AppHeader_header__logo')]");
     private final By EXIT_BUTTON = By.xpath(".//button[contains(@class, 'Account_button')]");
+    private final By REGISTER_BUTTON = By.xpath("//*[contains(text(),'Зарегистрироваться')]");
 
-    public ProfilePage(WebDriver driver) {
+    public AccountPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -24,6 +25,13 @@ public class ProfilePage {
     public String getEmail() {
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfElementLocated(EMAIL_FIELD));
         return driver.findElement(EMAIL_FIELD).getAttribute("value");
+    }
+
+    @Step
+    public void clickRegisterButton() {
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(REGISTER_BUTTON));
+        driver.findElement(REGISTER_BUTTON).click();
     }
 
     @Step
